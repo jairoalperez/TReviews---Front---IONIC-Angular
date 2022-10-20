@@ -1,0 +1,26 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>HOME</ion-title>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="home"></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+ <ion-list>
+  <h1 class="ion-text-center">
+    Top 20 Popular
+  </h1>
+  <ion-item *ngFor="let movie of movies" [routerLink]="['/movie/' + movie.id]">
+    <ion-card>
+      <ion-card-content class="ion-text-center">
+        <img src="{{IMG_URL}}{{movie.poster_path}}" alt="">
+        <ion-card-title>
+          {{movie.title}}
+        </ion-card-title>
+      </ion-card-content>
+    </ion-card>
+  </ion-item>
+ </ion-list>
+</ion-content>
