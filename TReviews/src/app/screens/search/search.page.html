@@ -1,0 +1,43 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-button href="dashboard">
+        <ion-icon name="home-outline"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-grid>
+      <ion-card>
+        <ion-card-content>
+          <ion-row>
+            <ion-col size="auto">
+              <div style="width: 210px">
+                <ion-input type="text" placeholder="Search a movie" #word></ion-input>
+              </div>
+              
+            </ion-col>
+            <ion-col>
+              <ion-button color="medium" (click)="searchMovie(word)">
+                <ion-icon name="search"></ion-icon>
+              </ion-button>
+            </ion-col>
+          </ion-row>
+        </ion-card-content>
+      </ion-card>
+    </ion-grid>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list>
+    <ion-item *ngFor="let movie of movies" [routerLink]="['/movie/' + movie.id]">
+      <ion-card>
+        <ion-card-content class="ion-text-center">
+          <img src="{{IMG_URL}}{{movie.poster_path}}" alt="">
+          <ion-card-title>
+            {{movie.title}}
+          </ion-card-title>
+        </ion-card-content>
+      </ion-card>
+    </ion-item>
+  </ion-list>
+</ion-content>
