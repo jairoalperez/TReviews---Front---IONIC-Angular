@@ -23,6 +23,10 @@ const routes: Routes = [
     path: 'search',
     loadChildren: () => import('./screens/search/search.module').then( m => m.SearchPageModule)
   },
+  {
+    path: 'tabnav',
+    loadChildren: () => import('./tabnav/tabnav.module').then( m => m.TabnavPageModule)
+  },
 ];
 
 @NgModule({
