@@ -3,13 +3,8 @@ import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
 
 const routes: Routes = [
   {
-    path: 'home',
-    loadChildren: () => import('./home/home.module').then( m => m.HomePageModule)
-  },
-  {
     path: '',
-    redirectTo: 'home',
-    pathMatch: 'full'
+    loadChildren: () => import('./home/home.module').then( m => m.HomePageModule)
   },
   {
     path: 'dashboard',
@@ -23,10 +18,6 @@ const routes: Routes = [
     path: 'search',
     loadChildren: () => import('./screens/search/search.module').then( m => m.SearchPageModule)
   },
-  {
-    path: 'tabnav',
-    loadChildren: () => import('./tabnav/tabnav.module').then( m => m.TabnavPageModule)
-  },
 ];
 
 @NgModule({
@@ -36,3 +27,4 @@ const routes: Routes = [
   exports: [RouterModule]
 })
 export class AppRoutingModule { }
+

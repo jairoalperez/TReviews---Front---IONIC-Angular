@@ -12,7 +12,7 @@ export class DashboardPage implements OnInit {
   IMG_URL = 'https://image.tmdb.org/t/p/w500'
 
   constructor(
-    private http: HttpClient
+    private http: HttpClient,
   ) { }
 
   ngOnInit() {

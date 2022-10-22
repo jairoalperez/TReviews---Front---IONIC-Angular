@@ -1,22 +1,16 @@
 <ion-header>
   <ion-toolbar>
-    <ion-buttons slot="start">
-      <ion-button href="dashboard">
-        <ion-icon name="home-outline"></ion-icon>
-      </ion-button>
-    </ion-buttons>
     <ion-grid>
       <ion-card>
         <ion-card-content>
           <ion-row>
             <ion-col size="auto">
-              <div style="width: 210px">
+              <div style="width: 256px">
                 <ion-input type="text" placeholder="Search a movie" #word></ion-input>
               </div>
-              
             </ion-col>
             <ion-col>
-              <ion-button color="medium" (click)="searchMovie(word)">
+              <ion-button color="light" (click)="searchMovie(word)">
                 <ion-icon name="search"></ion-icon>
               </ion-button>
             </ion-col>
@@ -41,3 +35,5 @@
     </ion-item>
   </ion-list>
 </ion-content>
+
+<app-tabs></app-tabs>

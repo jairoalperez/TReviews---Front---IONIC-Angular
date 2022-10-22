@@ -1,10 +1,15 @@
 <ion-header>
   <ion-toolbar>
     <ion-buttons slot="start">
-      <ion-button href="dashboard">
-        <ion-icon name="home-outline"></ion-icon>
+      <ion-button href="javascript:history.back()">
+        <ion-icon name="arrow-back"></ion-icon>
       </ion-button>
     </ion-buttons>
+    <div *ngIf="movie">
+      <h1 class="ion-text-center">
+        {{movie.title}}
+      </h1>
+    </div>
   </ion-toolbar>
 </ion-header>
 
@@ -14,11 +19,15 @@
       <ion-card-content class="ion-text-center">
         <img src="{{IMG_URL}}{{movie.poster_path}}" alt="">
         <ion-card-title>
-          {{movie.title}}
+          <h1>
+            {{movie.title}}
+          </h1>
         </ion-card-title>
         <div>
-          <ion-text>
-            {{movie.release_date}}
+          <ion-text color="dark">
+            <h2>
+              {{movie.release_date}}
+            </h2>
           </ion-text>
         </div>
         <div>
@@ -30,3 +39,5 @@
     </ion-card>
   </div>
 </ion-content>
+
+<app-tabs></app-tabs>

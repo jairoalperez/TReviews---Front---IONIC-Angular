@@ -1,20 +1,11 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>HOME</ion-title>
-    <ion-buttons slot="start">
-      <ion-back-button defaultHref="home"></ion-back-button>
-      <ion-button href="search">
-        <ion-icon name="search"></ion-icon>
-      </ion-button>
-    </ion-buttons>
+    <h1 class="ion-text-center">Top 20 Popular</h1>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
  <ion-list>
-  <h1 class="ion-text-center">
-    Top 20 Popular
-  </h1>
   <ion-item *ngFor="let movie of movies" [routerLink]="['/movie/' + movie.id]">
     <ion-card>
       <ion-card-content class="ion-text-center">
@@ -27,3 +18,5 @@
   </ion-item>
  </ion-list>
 </ion-content>
+
+<app-tabs></app-tabs>
