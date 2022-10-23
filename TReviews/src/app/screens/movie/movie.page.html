@@ -38,6 +38,40 @@
       </ion-card-content>
     </ion-card>
   </div>
+
+  <ion-card>
+    <ion-card-content>
+        <ion-item *ngFor="let resena of resenas" [routerLink]="['/review']">
+          <ion-card class="card-center">
+            <ion-card-content class="ion-text-center">
+              <ion-grid>
+                <ion-row>
+                  <ion-col>
+                    <ion-card-title>
+                      <h1>
+                        {{resena.autor}}
+                      </h1>
+                    </ion-card-title>
+                  </ion-col>
+                  <ion-col>
+                    <ion-card-title color="primary">
+                      <h1>
+                        ({{resena.puntaje}})
+                      </h1>
+                    </ion-card-title>
+                  </ion-col>
+                  <ion-col>
+                    <ion-text>
+                      {{resena.fecha}}
+                    </ion-text>
+                  </ion-col>
+                </ion-row>
+              </ion-grid>
+            </ion-card-content>
+          </ion-card>
+        </ion-item>
+    </ion-card-content>
+  </ion-card>
 </ion-content>
 
 <app-tabs></app-tabs>
