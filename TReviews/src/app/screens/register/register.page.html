@@ -1,9 +1,30 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>register</ion-title>
+    <ion-buttons slot="start">
+      <ion-button href="javascript:history.back()">
+        <ion-icon name="arrow-back"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-title>Register</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
-
+  <ion-row>
+    <ion-col>
+      <ion-card class="cards">
+        <ion-card-content>
+          <ion-input type="text" placeholder="Username" #username></ion-input>
+          <ion-input type="text" placeholder="Bio (From 1 to 5)" #bio></ion-input>
+          <ion-input type="email" placeholder="Email" #correo></ion-input>
+          <ion-input type="text" placeholder="Full Name" #nombre></ion-input>
+          <ion-input type="password" placeholder="Password" #clave></ion-input>
+          <ion-input type="password" placeholder="Verify Password" #verificarclave></ion-input>
+          <ion-button expand="block" (click)="ayuda()" href="dashboard" class="cbutton">
+            Register
+          </ion-button>
+        </ion-card-content>
+      </ion-card>
+    </ion-col>
+  </ion-row>
 </ion-content>

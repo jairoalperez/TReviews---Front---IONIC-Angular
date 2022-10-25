@@ -1,9 +1,26 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>login</ion-title>
+    <ion-buttons slot="start">
+      <ion-button href="javascript:history.back()">
+        <ion-icon name="arrow-back"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-title>Log In</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
-
+  <ion-row>
+    <ion-col>
+      <ion-card class="cards">
+        <ion-card-content>
+          <ion-input type="text" placeholder="Username" #username></ion-input>
+          <ion-input type="password" placeholder="Password" #clave></ion-input>
+          <ion-button expand="block" href="dashboard" class="cbutton">
+            Log In
+          </ion-button>
+        </ion-card-content>
+      </ion-card>
+    </ion-col>
+  </ion-row>
 </ion-content>

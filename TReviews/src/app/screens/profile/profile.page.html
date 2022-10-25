@@ -1,11 +1,62 @@
-<ion-header>
-  <ion-toolbar>
-    <ion-title>profile</ion-title>
-  </ion-toolbar>
-</ion-header>
-
 <ion-content>
+  <ion-card>
+    <ion-card-content class="ion-text-center">
+      <ion-card-title>
+        <h1>
+          Username
+        </h1>
+      </ion-card-title>
+      <div class="nombre">
+        <ion-text color="dark" >
+          <h2>
+            Nombre Apellido
+          </h2>
+        </ion-text>
+      </div>
+      <div class="bio">
+        <ion-text>
+          bioakjwhndkuahnwdkiujanwdouinawodnawolidjnlaowijdl;awjdp;aoiwjdpaiwjdoianwdolawndliawnjdolianwiodujnawkjdnalkwjdnowiaudhjoaiwjdolaiwjdoiawjdopiawjdloiawjodijaowidjaowlidoaiwjdoawijdaolwkdmoaliwjdoaiwjdolawkjnmdoawijdoawidjopawidjaolwidjalowidjoawihdowufhowaifjwealfkejmnfoiawjfoliwefjhaoiwngcuikweyfgaoiugrhgoinawuhefoniwuhfneoiwnhf
+        </ion-text>
+      </div>
+      <ion-button expand="block" href="" class="cb">
+        Edit Profile
+      </ion-button>
+    </ion-card-content>
+  </ion-card>
 
+  <ion-card>
+    <ion-card-content>
+        <ion-item *ngFor="let resena of resenas" [routerLink]="['/review']">
+          <ion-card class="card-center">
+            <ion-card-content class="ion-text-center">
+              <ion-grid>
+                <ion-row>
+                  <ion-col>
+                    <ion-card-title>
+                      <h1>
+                        {{resena.autor}}
+                      </h1>
+                    </ion-card-title>
+                  </ion-col>
+                  <ion-col>
+                    <ion-card-title color="primary">
+                      <h1>
+                        ({{resena.puntaje}})
+                      </h1>
+                    </ion-card-title>
+                  </ion-col>
+                  <ion-col>
+                    <ion-text>
+                      {{resena.fecha}}
+                    </ion-text>
+                  </ion-col>
+                </ion-row>
+              </ion-grid>
+            </ion-card-content>
+          </ion-card>
+        </ion-item>
+    </ion-card-content>
+  </ion-card>
 </ion-content>
 
 <app-tabs></app-tabs>
