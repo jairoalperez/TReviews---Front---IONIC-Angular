@@ -29,7 +29,13 @@ export class CreviewPage implements OnInit {
   }
 
   ayuda() {
-    this.http.get('https://rottern-tomatos.herokuapp.com/buscar-nombre/jairito').subscribe(res => this.ayudaa = res)
+    this.http.get('https://rottern-tomatos.herokuapp.com/buscar-nombre/jairito').
+    subscribe(res => {
+      this.ayudaa = res
+      console.log(this.ayudaa)
+    }
+    )
+    
   }
 
   createR(contenido, puntaje) {
