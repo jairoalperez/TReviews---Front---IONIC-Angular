@@ -34,4 +34,6 @@ export class MoviePage implements OnInit {
     
   }
 
+  
+
 }

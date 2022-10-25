@@ -39,8 +39,16 @@
     </ion-card>
   </div>
 
+  
+  
+
   <ion-card>
     <ion-card-content>
+      <div *ngIf="movie">
+        <ion-button expand="block" href="creview/{{movie.id}}">
+          Create Review
+        </ion-button>
+      </div>
         <ion-item *ngFor="let resena of resenas" [routerLink]="['/review']">
           <ion-card class="card-center">
             <ion-card-content class="ion-text-center">

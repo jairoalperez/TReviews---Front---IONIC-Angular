@@ -26,6 +26,18 @@ const routes: Routes = [
     path: 'review',
     loadChildren: () => import('./screens/review/review.module').then( m => m.ReviewPageModule)
   },
+  {
+    path: 'creview/:id',
+    loadChildren: () => import('./screens/creview/creview.module').then( m => m.CreviewPageModule)
+  },
+  {
+    path: 'login',
+    loadChildren: () => import('./screens/login/login.module').then( m => m.LoginPageModule)
+  },
+  {
+    path: 'register',
+    loadChildren: () => import('./screens/register/register.module').then( m => m.RegisterPageModule)
+  },
 ];
 
 @NgModule({

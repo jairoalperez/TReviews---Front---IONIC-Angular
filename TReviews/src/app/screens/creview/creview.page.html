@@ -1,0 +1,34 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-button href="javascript:history.back()">
+        <ion-icon name="arrow-back"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+      <h1 class="ion-text-center">
+        Create Review
+      </h1>
+  </ion-toolbar>
+</ion-header>
+
+
+<ion-content>
+  <div *ngIf="movie">
+    <ion-row>
+      <ion-col>
+        <ion-card>
+          <ion-card-content>
+            <ion-input disabled="true" value="{{movie.title}}"></ion-input>
+            <ion-textarea class="customtext" type="text" placeholder="Review" rows="7" #contenido></ion-textarea>
+            <ion-input type="number" placeholder="Rating (From 1 to 5)" #puntaje></ion-input>
+            <ion-button expand="block" (click)="ayuda()">
+              Publish
+            </ion-button>
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+  </div>
+</ion-content>
+
+<app-tabs></app-tabs>
