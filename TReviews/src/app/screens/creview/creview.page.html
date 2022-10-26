@@ -21,7 +21,7 @@
             <ion-input disabled="true" value="{{movie.title}}"></ion-input>
             <ion-textarea class="customtext" type="text" placeholder="Review" rows="7" #contenido></ion-textarea>
             <ion-input type="number" placeholder="Rating (From 1 to 5)" #puntaje></ion-input>
-            <ion-button expand="block" (click)="ayuda()">
+            <ion-button expand="block" (click)="(createR(contenido, puntaje))">
               Publish
             </ion-button>
           </ion-card-content>

@@ -39,16 +39,23 @@ export class CreviewPage implements OnInit {
   }
 
   createR(contenido, puntaje) {
+
+    var tt = Date.now()
+    var hoy = new Date(tt)
+    var fs: string = hoy.toDateString()
+
+    console.log(fs)
+
     this.movieid = this.activatedRoute.snapshot.paramMap.get('id')
     this.http.post('https://rottern-tomatos.herokuapp.com/resena-crear', {
     id_usuario: 2,
     pelicula: this.movieid,
     contenido: contenido.value,
-    fecha: '25/10/2022',
+    fecha: fs,
     puntaje: puntaje.value 
     }).subscribe(
       res => {
-        console.log('registro exitoso')
+        alert('registro exitoso')
       },
       err => {
         alert('Error al crear la review')

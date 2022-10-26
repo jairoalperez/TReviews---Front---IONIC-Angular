@@ -14,6 +14,7 @@ export class MoviePage implements OnInit {
   URL_API = 'https://api.themoviedb.org/3/movie/'
   IMG_URL = 'https://image.tmdb.org/t/p/w500'
   movie;
+  reviews: Array<any> = []
 
   resenas: Array<any> = [
     {autor: 'jairo', pelicula: 'avengers', contenido: 'esta pelicula es buenarda', fecha: '08/10/2022', puntaje: 10},
@@ -29,11 +30,15 @@ export class MoviePage implements OnInit {
 
   ngOnInit() {
     this.movieid = this.activatedRoute.snapshot.paramMap.get('id')
+
     this.http.get(this.URL_API+this.movieid+this.API_KEY)
       .subscribe(res => this.movie = res)
     
+      this.http.get<any>('https://rottern-tomatos.herokuapp.com/resena-peli/'+this.movieid)
+      .subscribe(res => {
+        this.reviews = res;
+      })
+    
   }
-
-  
 
 }
