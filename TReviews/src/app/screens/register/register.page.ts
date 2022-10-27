@@ -15,26 +15,23 @@ export class RegisterPage implements OnInit {
   ngOnInit() {
   }
 
-  registerUser(username, bio, correo, nombre, contraseña, verificarclave) {
+  registerUser(username, bio, correo, nombre, clave, verificarclave) {
 
-    console.log(username.value+' '+bio.value+' '+correo.value+' '+nombre.value+' '+contraseña.value+' '+verificarclave.value)
-
-    /*this.http.post('https://rottern-tomatos.herokuapp.com/registro', {
+    this.http.post('https://rottern-tomatos.herokuapp.com/registro', {
     username: username.value,
     bio: bio.value,
     correo: correo.value,
     nombre: nombre.value,
-    contraseña: contraseña.value,
+    contraseña: clave.value,
     verificarclave: verificarclave.value
     }).subscribe(
       res => {
         alert('Registro exitoso')
-        console.log(res)
       },
       err => {
         alert('Error al crear la cuenta')
       }
-    )*/
+    )
 
   }
 

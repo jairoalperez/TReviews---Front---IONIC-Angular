@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { LocaldService } from 'src/app/services/locald.service';
+import { HttpClient } from '@angular/common/http';
+import { User } from 'src/app/models/User';
 
 @Component({
   selector: 'app-profile',
@@ -7,6 +10,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ProfilePage implements OnInit {
 
+  user;
+
   resenas: Array<any> = [
     {autor: 'jairo', pelicula: 'avengers', contenido: 'esta pelicula es buenarda', fecha: '08/10/2022', puntaje: 10},
     {autor: 'axel', pelicula: 'avengers', contenido: 'verga pa mala', fecha: '08/12/2022', puntaje: 3},
@@ -14,9 +19,19 @@ export class ProfilePage implements OnInit {
     {autor: 'acurero', pelicula: 'avengers', contenido: 'estan raspados todos', fecha: '10/31/2022', puntaje: 1},
   ]
 
-  constructor() { }
+  constructor(
+    private localStore: LocaldService,
+    private http: HttpClient
+  ) { }
 
   ngOnInit() {
+    
+    this.http.get('https://rottern-tomatos.herokuapp.com/buscar-nombre/'+this.localStore.getData('username'))
+      .subscribe(res => {
+        this.user = res;
+      }
+      )
+
   }
 
 }

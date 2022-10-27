@@ -38,6 +38,10 @@ const routes: Routes = [
     path: 'register',
     loadChildren: () => import('./screens/register/register.module').then( m => m.RegisterPageModule)
   },
+  {
+    path: 'editp/:id',
+    loadChildren: () => import('./screens/editp/editp.module').then( m => m.EditpPageModule)
+  },
 ];
 
 @NgModule({

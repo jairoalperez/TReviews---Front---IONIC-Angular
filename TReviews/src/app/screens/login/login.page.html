@@ -16,7 +16,7 @@
         <ion-card-content>
           <ion-input type="text" placeholder="Username" #username></ion-input>
           <ion-input type="password" placeholder="Password" #clave></ion-input>
-          <ion-button expand="block" href="dashboard" class="cbutton">
+          <ion-button expand="block" (click)="logIn(username, clave)" class="cbutton">
             Log In
           </ion-button>
         </ion-card-content>
