@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { ActivatedRoute } from '@angular/router';
-import { Review } from 'src/app/models/review';
 
 @Component({
   selector: 'app-creview',
@@ -15,8 +14,6 @@ export class CreviewPage implements OnInit {
   URL_API = 'https://api.themoviedb.org/3/movie/'
   movie;
 
-  ayudaa;
-
   constructor(
     private activatedRoute: ActivatedRoute,
     private http: HttpClient,
@@ -28,23 +25,11 @@ export class CreviewPage implements OnInit {
       .subscribe(res => this.movie = res)
   }
 
-  ayuda() {
-    this.http.get('https://rottern-tomatos.herokuapp.com/buscar-nombre/jairito').
-    subscribe(res => {
-      this.ayudaa = res
-      console.log(this.ayudaa)
-    }
-    )
-    
-  }
-
   createR(contenido, puntaje) {
 
     var tt = Date.now()
     var hoy = new Date(tt)
     var fs: string = hoy.toDateString()
-
-    console.log(fs)
 
     this.movieid = this.activatedRoute.snapshot.paramMap.get('id')
     this.http.post('https://rottern-tomatos.herokuapp.com/resena-crear', {
