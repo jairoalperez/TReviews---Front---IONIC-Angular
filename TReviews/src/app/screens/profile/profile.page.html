@@ -28,7 +28,7 @@
 
   <ion-card>
     <ion-card-content>
-        <ion-item *ngFor="let resena of resenas" [routerLink]="['/review']">
+        <ion-item *ngFor="let review of reviews" [routerLink]="['/review/' + review.id_resena]">
           <ion-card class="card-center">
             <ion-card-content class="ion-text-center">
               <ion-grid>
@@ -36,20 +36,20 @@
                   <ion-col>
                     <ion-card-title>
                       <h1>
-                        {{resena.autor}}
+                        {{review.username}}
                       </h1>
                     </ion-card-title>
                   </ion-col>
                   <ion-col>
                     <ion-card-title color="primary">
                       <h1>
-                        ({{resena.puntaje}})
+                        ({{review.puntaje}})
                       </h1>
                     </ion-card-title>
                   </ion-col>
                   <ion-col>
                     <ion-text>
-                      {{resena.fecha}}
+                      {{review.fecha}}
                     </ion-text>
                   </ion-col>
                 </ion-row>

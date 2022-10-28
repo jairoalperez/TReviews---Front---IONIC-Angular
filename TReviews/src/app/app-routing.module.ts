@@ -23,7 +23,7 @@ const routes: Routes = [
     loadChildren: () => import('./screens/profile/profile.module').then( m => m.ProfilePageModule)
   },
   {
-    path: 'review',
+    path: 'review/:id',
     loadChildren: () => import('./screens/review/review.module').then( m => m.ReviewPageModule)
   },
   {

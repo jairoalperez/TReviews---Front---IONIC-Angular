@@ -11,13 +11,9 @@ import { User } from 'src/app/models/User';
 export class ProfilePage implements OnInit {
 
   user;
-
-  resenas: Array<any> = [
-    {autor: 'jairo', pelicula: 'avengers', contenido: 'esta pelicula es buenarda', fecha: '08/10/2022', puntaje: 10},
-    {autor: 'axel', pelicula: 'avengers', contenido: 'verga pa mala', fecha: '08/12/2022', puntaje: 3},
-    {autor: 'adnan', pelicula: 'avengers', contenido: 'masomenos', fecha: '08/12/2022', puntaje: 6},
-    {autor: 'acurero', pelicula: 'avengers', contenido: 'estan raspados todos', fecha: '10/31/2022', puntaje: 1},
-  ]
+  udata;
+  idu;
+  reviews;
 
   constructor(
     private localStore: LocaldService,
@@ -29,6 +25,16 @@ export class ProfilePage implements OnInit {
     this.http.get('https://rottern-tomatos.herokuapp.com/buscar-nombre/'+this.localStore.getData('username'))
       .subscribe(res => {
         this.user = res;
+        this.udata = this.user.find(udata => udata.username = this.localStore.getData('username'))
+        this.idu = this.udata.id_usuario
+        //this.localStore.saveData('iduser', idu)
+        //console.log(this.localStore.getData('username')+' '+this.localStore.getData('iduser'))
+      }
+      )
+
+      this.http.get('https://rottern-tomatos.herokuapp.com/resena-buscar/'+this.localStore.getData('username'))
+      .subscribe(res => {
+        this.reviews = res;
       }
       )
 

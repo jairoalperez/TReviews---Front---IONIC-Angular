@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { ActivatedRoute } from '@angular/router';
+import { LocaldService } from 'src/app/services/locald.service';
 
 @Component({
   selector: 'app-creview',
@@ -17,6 +18,7 @@ export class CreviewPage implements OnInit {
   constructor(
     private activatedRoute: ActivatedRoute,
     private http: HttpClient,
+    private localStore: LocaldService
   ) { }
 
   ngOnInit() {
@@ -33,11 +35,11 @@ export class CreviewPage implements OnInit {
 
     this.movieid = this.activatedRoute.snapshot.paramMap.get('id')
     this.http.post('https://rottern-tomatos.herokuapp.com/resena-crear', {
-    id_usuario: 2,
     pelicula: this.movieid,
     contenido: contenido.value,
     fecha: fs,
-    puntaje: puntaje.value 
+    puntaje: puntaje.value,
+    username: this.localStore.getData('username')
     }).subscribe(
       res => {
         alert('registro exitoso')

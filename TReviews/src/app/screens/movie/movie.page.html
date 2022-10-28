@@ -49,7 +49,7 @@
           Create Review
         </ion-button>
       </div>
-        <ion-item *ngFor="let review of reviews" [routerLink]="['/review']">
+        <ion-item *ngFor="let review of reviews" [routerLink]="['/review/' + review.id_resena]">
           <ion-card class="card-center">
             <ion-card-content class="ion-text-center">
               <ion-grid>
@@ -57,7 +57,7 @@
                   <ion-col>
                     <ion-card-title>
                       <h1>
-                        {{review.id_usuario}}
+                        {{review.username}}
                       </h1>
                     </ion-card-title>
                   </ion-col>
