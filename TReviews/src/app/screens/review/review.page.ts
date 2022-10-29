@@ -36,9 +36,6 @@ export class ReviewPage implements OnInit {
 
         this.http.get(this.URL_API+this.movieid+this.API_KEY)
         .subscribe(res => this.movie = res)
-
-        //this.localStore.saveData('iduser', idu)
-        //console.log(this.localStore.getData('username')+' '+this.localStore.getData('iduser'))
       }
       )
 

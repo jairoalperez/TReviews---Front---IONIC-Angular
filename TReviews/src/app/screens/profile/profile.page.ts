@@ -27,8 +27,6 @@ export class ProfilePage implements OnInit {
         this.user = res;
         this.udata = this.user.find(udata => udata.username = this.localStore.getData('username'))
         this.idu = this.udata.id_usuario
-        //this.localStore.saveData('iduser', idu)
-        //console.log(this.localStore.getData('username')+' '+this.localStore.getData('iduser'))
       }
       )
 
