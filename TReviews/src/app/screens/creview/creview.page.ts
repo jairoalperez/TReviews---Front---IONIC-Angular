@@ -42,7 +42,8 @@ export class CreviewPage implements OnInit {
     username: this.localStore.getData('username')
     }).subscribe(
       res => {
-        alert('registro exitoso')
+        alert('Review created')
+        location.href = 'movie/'+this.movieid
       },
       err => {
         alert('Error al crear la review')

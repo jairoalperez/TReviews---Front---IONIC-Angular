@@ -1,10 +1,74 @@
 <ion-header>
-  <ion-toolbar>
-    <ion-title>review</ion-title>
-  </ion-toolbar>
+  <div *ngIf="movie">
+    <div *ngIf="rdata">
+      <ion-toolbar>
+        <ion-buttons slot="start">
+          <ion-button href="javascript:history.back()">
+            <ion-icon name="arrow-back"></ion-icon>
+          </ion-button>
+        </ion-buttons>
+        <h1 class="ion-text-center">
+          {{movie.title}} --- <ion-icon name="star"></ion-icon>{{rdata.puntaje}}
+        </h1>
+      </ion-toolbar>
+    </div>
+  </div>
 </ion-header>
 
 <ion-content>
+  <div *ngIf="movie">
+    <ion-card>
+      <ion-card-content class="ion-text-center">
+        <img src="{{IMG_URL}}{{movie.poster_path}}" alt="">
+        <ion-card-title>
+          <h1>
+            {{movie.title}}
+          </h1>
+        </ion-card-title>
+          <ion-text color="dark">
+            <h2>
+              {{movie.release_date}}
+            </h2>
+          </ion-text>
+      </ion-card-content>
+    </ion-card>
+  </div>
+
+  <div *ngIf="rdata">
+    <ion-card>
+      <ion-card-content class="ion-text-center">
+        <ion-card-title>
+          <h1>
+            {{rdata.username}}
+          </h1>
+        </ion-card-title>
+        <div class="nombre">
+          <ion-text color="dark">
+            <h2>
+              {{rdata.fecha}}
+            </h2>
+          </ion-text>
+        </div>
+        <div class="nombre">
+          <ion-text color="dark">
+            <h2>
+              <ion-icon name="star"></ion-icon>{{rdata.puntaje}}
+            </h2>
+          </ion-text>
+        </div>
+        <div class="bio">
+          <ion-text>
+            {{rdata.contenido}}
+          </ion-text>
+        </div>
+        <div *ngIf="reviewid">
+        <ion-button expand="block" href="commentary/{{reviewid}}">
+          Create Review
+        </ion-button>
+      </div>
+      </ion-card-content>
+    </ion-card>
+  </div>
 
 </ion-content>
 

@@ -27,6 +27,7 @@ export class RegisterPage implements OnInit {
     }).subscribe(
       res => {
         alert('Registro exitoso')
+        location.href = 'login'
       },
       err => {
         alert('Error al crear la cuenta')

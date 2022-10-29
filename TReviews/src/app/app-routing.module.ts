@@ -42,6 +42,10 @@ const routes: Routes = [
     path: 'editp/:id',
     loadChildren: () => import('./screens/editp/editp.module').then( m => m.EditpPageModule)
   },
+  {
+    path: 'commentary/:id',
+    loadChildren: () => import('./screens/commentary/commentary.module').then( m => m.CommentaryPageModule)
+  },
 ];
 
 @NgModule({

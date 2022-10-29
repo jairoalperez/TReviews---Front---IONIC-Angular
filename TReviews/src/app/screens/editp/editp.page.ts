@@ -47,6 +47,7 @@ export class EditpPage implements OnInit {
       res => {
         this.localStore.saveData('username', username.value)
         alert('Cambio exitoso')
+        
       },
       err => {
         alert('Error al cambiar los datos')
