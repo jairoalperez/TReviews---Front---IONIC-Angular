@@ -14,6 +14,7 @@ export class ReviewPage implements OnInit {
   rdata;
   movieid;
   movie;
+  com;
 
   URL_API = 'https://api.themoviedb.org/3/movie/'
   API_KEY = '?api_key=91355432bcd29434c686a0d24d0947fd'
@@ -36,6 +37,12 @@ export class ReviewPage implements OnInit {
 
         this.http.get(this.URL_API+this.movieid+this.API_KEY)
         .subscribe(res => this.movie = res)
+      }
+      )
+
+      this.http.get('https://rottern-tomatos.herokuapp.com/comentario-buscar/'+this.reviewid)
+      .subscribe(res => {
+        this.com = res;
       }
       )
 

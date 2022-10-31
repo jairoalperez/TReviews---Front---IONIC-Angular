@@ -25,11 +25,11 @@
             {{movie.title}}
           </h1>
         </ion-card-title>
-          <ion-text color="dark">
-            <h2>
-              {{movie.release_date}}
-            </h2>
-          </ion-text>
+        <ion-text color="dark">
+          <h2>
+            {{movie.release_date}}
+          </h2>
+        </ion-text>
       </ion-card-content>
     </ion-card>
   </div>
@@ -62,13 +62,54 @@
           </ion-text>
         </div>
         <div *ngIf="reviewid">
-        <ion-button expand="block" href="commentary/{{reviewid}}">
-          Create Review
-        </ion-button>
-      </div>
+          <ion-button expand="block" href="commentary/{{reviewid}}">
+            Create Review
+          </ion-button>
+        </div>
       </ion-card-content>
     </ion-card>
   </div>
+
+  <ion-card>
+    <ion-card-content>
+      <div *ngIf="reviewid">
+        <ion-button expand="block" href="commentary/{{reviewid}}">
+          Comment
+        </ion-button>
+      </div>
+      <ion-item *ngFor="let comm of com">
+        <ion-card class="card-center">
+          <ion-card-content class="ion-text-center">
+            <ion-grid>
+              <ion-row>
+                <ion-col>
+                  <ion-card-title>
+                    <h2>
+                      @{{comm.username}}
+                    </h2>
+                  </ion-card-title>
+                </ion-col>
+                <ion-col>
+                  <ion-text>
+                    ({{comm.fecha}})
+                  </ion-text>
+                </ion-col>
+              </ion-row>
+              <ion-row>
+                <ion-col>
+                  <div class="com">
+                    <ion-text>
+                      {{comm.comentarios}}
+                    </ion-text>
+                  </div>
+                </ion-col>
+              </ion-row>
+            </ion-grid>
+          </ion-card-content>
+        </ion-card>
+      </ion-item>
+    </ion-card-content>
+  </ion-card>
 
 </ion-content>
 
