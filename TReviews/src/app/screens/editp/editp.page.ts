@@ -32,19 +32,19 @@ export class EditpPage implements OnInit {
       )
   }
 
-  editUser(username, bio, correo, nombre, clave) {
+  editUser(username, bio, correo, nombre) {
 
     this.http.put('https://rottern-tomatos.herokuapp.com/modificar', {
     username: username.value,
     bio: bio.value,
     correo: correo.value,
     nombre: nombre.value,
-    contraseña: clave.value,
     id_usuario: this.idu
     }).subscribe(
       res => {
         this.localStore.saveData('username', username.value)
         alert('Cambio exitoso')
+        location.href = 'profile'
         
       },
       err => {
