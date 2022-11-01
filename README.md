@@ -23,4 +23,5 @@ La APP permite:
 - Editar Usuario
 
 Link del Backend: https://github.com/AxelGabbriel/backend-rotternTomatos-clone
+
 Link de la API TMDB: https://www.themoviedb.org/
