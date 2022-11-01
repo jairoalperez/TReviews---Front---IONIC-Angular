@@ -15,6 +15,7 @@ export class MoviePage implements OnInit {
   IMG_URL = 'https://image.tmdb.org/t/p/w500'
   movie;
   reviews: Array<any> = []
+  promedio
 
   constructor(
     private activatedRoute: ActivatedRoute,
@@ -30,6 +31,11 @@ export class MoviePage implements OnInit {
       this.http.get<any>('https://rottern-tomatos.herokuapp.com/resena-peli/'+this.movieid)
       .subscribe(res => {
         this.reviews = res;
+      })
+
+      this.http.get('https://rottern-tomatos.herokuapp.com/promedio/'+this.movieid)
+      .subscribe(res => {
+        this.promedio = res;
       })
     
   }

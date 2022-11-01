@@ -14,6 +14,7 @@
 </ion-header>
 
 <ion-content>
+<div *ngFor="let pro of promedio">
   <div *ngIf="movie">
     <ion-card>
       <ion-card-content class="ion-text-center">
@@ -23,6 +24,13 @@
             {{movie.title}}
           </h1>
         </ion-card-title>
+        <div>
+          <ion-card-title>
+            <h1>
+              <ion-icon name="star"></ion-icon>{{pro.avg}}
+            </h1>
+          </ion-card-title>
+        </div>
         <div>
           <ion-text color="dark">
             <h2>
@@ -38,6 +46,7 @@
       </ion-card-content>
     </ion-card>
   </div>
+</div>
 
   
   
@@ -64,10 +73,12 @@
                   <ion-col>
                     <ion-card-title color="primary">
                       <h1>
-                        ({{review.puntaje}})
+                        <ion-icon name="star"></ion-icon>{{review.puntaje}}
                       </h1>
                     </ion-card-title>
                   </ion-col>
+                </ion-row>
+                <ion-row>
                   <ion-col>
                     <ion-text>
                       {{review.fecha}}
