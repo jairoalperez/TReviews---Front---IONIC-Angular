@@ -24,4 +24,6 @@ La APP permite:
 
 Link del Backend: https://github.com/AxelGabbriel/backend-rotternTomatos-clone
 
+Link de descarga de la APK: https://www.mediafire.com/file/aa3fnfiwhgexyfr/TReviews.apk/file
+
 Link de la API TMDB: https://www.themoviedb.org/
