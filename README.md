@@ -2,9 +2,10 @@
 
 ## Proyecto #1 para Programacion de dispositivos moviles
 
-#### Devs:
-#### Jairo Perez,
-#### Axel Miquelena
+### Devs:
+
+### - Jairo Perez,
+### - Axel Miquelena
 
 App de reseñas de peliculas desarrollada con IONIC/ANGULAR, utilizando la API TMDB para el dataset de
 las peliculas, mas un backend desarrollado con Node.Js para el manejo de datos. Base de Datos SQL desarrollada
