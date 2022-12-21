@@ -4,7 +4,7 @@
 
 ### Devs:
 
-### - Jairo Perez,
+### - Jairo Perez
 ### - Axel Miquelena
 
 App de reseñas de peliculas desarrollada con IONIC/ANGULAR, utilizando la API TMDB para el dataset de
